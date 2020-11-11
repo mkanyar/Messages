@@ -12,7 +12,7 @@ class Reader implements Runnable {
     public void run() {
         Random random = new Random();
         for(String latestMessage = message.read();
-            latestMessage.equals("Finished");
+            !latestMessage.equals("Finished");
             latestMessage = message.read()) {
             System.out.println(latestMessage);
             try {
